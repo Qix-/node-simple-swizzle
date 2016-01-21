@@ -18,6 +18,23 @@ myFunc(1, 2, 3, 4);   // [1, 2, 3, 4]
 myFunc([1, 2, 3, 4]); // [1, 2, 3, 4]
 ```
 
+Functions can also be wrapped to automatically swizzle arguments and be passed
+the resulting array.
+
+```js
+var swizzle = require('simple-swizzle');
+
+var sfn = swizzle.wrap(function (args) {
+	// ...
+	return args;
+});
+
+
+sfn(1, [2, 3], 4); // [1, 2, 3, 4]
+sfn(1, 2, 3, 4);   // [1, 2, 3, 4]
+sfn([1, 2, 3, 4]); // [1, 2, 3, 4]
+```
+
 ## License
 Licensed under the [MIT License](http://opensource.org/licenses/MIT).
 You can find a copy of it in [LICENSE](LICENSE).

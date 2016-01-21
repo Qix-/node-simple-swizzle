@@ -3,7 +3,7 @@
 var concat = Array.prototype.concat;
 var slice = Array.prototype.slice;
 
-module.exports = function swizzle(args) {
+var swizzle = module.exports = function swizzle(args) {
 	var results = [];
 
 	for (var i = 0, len = args.length; i < len; i++) {
@@ -19,4 +19,10 @@ module.exports = function swizzle(args) {
 	}
 
 	return results;
+};
+
+swizzle.wrap = function (fn) {
+	return function () {
+		return fn(swizzle(arguments));
+	};
 };
