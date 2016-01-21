@@ -24,15 +24,14 @@ the resulting array.
 ```js
 var swizzle = require('simple-swizzle');
 
-var sfn = swizzle.wrap(function (args) {
+var swizzledFn = swizzle.wrap(function (args) {
 	// ...
 	return args;
 });
 
-
-sfn(1, [2, 3], 4); // [1, 2, 3, 4]
-sfn(1, 2, 3, 4);   // [1, 2, 3, 4]
-sfn([1, 2, 3, 4]); // [1, 2, 3, 4]
+swizzledFn(1, [2, 3], 4); // [1, 2, 3, 4]
+swizzledFn(1, 2, 3, 4);   // [1, 2, 3, 4]
+swizzledFn([1, 2, 3, 4]); // [1, 2, 3, 4]
 ```
 
 ## License
