@@ -23,6 +23,11 @@ it 'should swizzle pseudo-arrays', ->
 	(swizMyself 1, 2, {length: 2, 0: 3, 1: 4}).should.deepEqual [1, 2, 3, 4]
 	(swizMyself {length: 1, 0: 1}, 2, 3, {length: 1, 0: 4}).should.deepEqual [1, 2, 3, 4]
 
+it 'should correctly swizzle string arguments', ->
+	(swizMyself 'hello').should.deepEqual ['hello']
+	(swizMyself ['hello']).should.deepEqual ['hello']
+	(swizMyself ['hello'], 'there').should.deepEqual ['hello', 'there']
+
 it 'should wrap a function for swizzling', ->
 	fn = (args) -> args
 	swizzleMyFn = swizzle.wrap fn
