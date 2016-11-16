@@ -1,7 +1,7 @@
 {
   "name": "simple-swizzle",
   "description": "Simply swizzle your arguments",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "author": "Qix (http://github.com/qix-)",
   "keywords": [
     "argument",
